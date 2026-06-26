@@ -1,0 +1,30 @@
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+
+# Dependencies and package-manager caches
+vendor/
+node_modules/
+.composer/
+.npm/
+
+# Logs and runtime output
+*.log
+logs/
+tmp/
+temp/
+
+# Generated screenshots and test artifacts
+_shots/
+coverage/
+
+# Editor and OS metadata
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Codex/agent local state
+.agents/
+.codex/
