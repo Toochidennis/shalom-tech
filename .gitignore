@@ -2,9 +2,13 @@
 .env
 .env.*
 !.env.example
+/config/app.php
+/app/Config/core.php
+/app/Config/database.php
 
 # Dependencies and package-manager caches
 vendor/
+vendors/
 node_modules/
 .composer/
 .npm/
@@ -12,8 +16,21 @@ node_modules/
 # Logs and runtime output
 *.log
 logs/
+/logs/*
+!/logs/empty
 tmp/
 temp/
+/tmp/cache/models/*
+!/tmp/cache/models/empty
+/tmp/cache/persistent/*
+!/tmp/cache/persistent/empty
+/tmp/cache/views/*
+!/tmp/cache/views/empty
+/tmp/sessions/*
+!/tmp/sessions/empty
+/tmp/tests/*
+!/tmp/tests/empty
+/app/tmp/*
 
 # Generated screenshots and test artifacts
 _shots/
