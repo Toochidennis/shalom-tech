@@ -8,7 +8,7 @@ include 'includes/header.php';
 <section class="page-hero">
   <div class="container">
     <div class="page-hero__inner">
-      <div class="breadcrumb"><a href="index.php">Home</a> / Admission</div>
+      <div class="breadcrumb"><a href=".">Home</a> / Admission</div>
       <h1>Admission</h1>
       <p>Give your child a balanced, qualitative Christian education. Here's how to join Shalom Academy.</p>
     </div>

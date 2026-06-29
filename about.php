@@ -8,7 +8,7 @@ include 'includes/header.php';
 <section class="page-hero">
   <div class="container">
     <div class="page-hero__inner">
-      <div class="breadcrumb"><a href="index.php">Home</a> / About Us</div>
+      <div class="breadcrumb"><a href=".">Home</a> / About Us</div>
       <h1>About Shalom Academy</h1>
       <p>A community committed to balanced, qualitative Christian education at minimum cost.</p>
     </div>
@@ -101,8 +101,8 @@ include 'includes/header.php';
       <h2>Want to see Shalom Academy for yourself?</h2>
       <p>Arrange a visit or start an application — we're happy to answer any questions.</p>
       <div class="hero__cta">
-        <a class="btn btn--gold btn--lg" href="admission.php">Apply for Admission</a>
-        <a class="btn btn--ghost-light btn--lg" href="contact.php">Contact Us</a>
+        <a class="btn btn--gold btn--lg" href="admission">Apply for Admission</a>
+        <a class="btn btn--ghost-light btn--lg" href="contact">Contact Us</a>
       </div>
     </div>
   </div>

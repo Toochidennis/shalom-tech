@@ -1,15 +1,8 @@
 <?php
 require_once 'config.php';
 
-/*
- * Gallery — dynamic-ready.
- * Images are read from assets/img/gallery/ so staff can add photos by simply
- * dropping files into that folder (no code change needed). If the folder is
- * empty/missing, a set of labelled placeholders is shown instead.
- *
- * This preserves the "don't hardcode dynamic content" rule: the gallery is
- * driven by the filesystem, not a hardcoded list.
- */
+// Photos are read from assets/img/gallery/. Drop image files in that folder
+// and they appear automatically.
 $gallery_dir = __DIR__ . '/assets/img/gallery';
 $gallery_url = 'assets/img/gallery';
 $images = [];
@@ -21,8 +14,7 @@ if (is_dir($gallery_dir)) {
     }
 }
 
-// Fallback placeholders (replace by adding real files to assets/img/gallery/)
-$placeholders = [
+$captions = [
     'Agriculture practicals', 'Student leadership', 'ICT laboratory',
     'Classroom activities', 'Sports & games', 'Cultural day',
     'Science practicals', 'Award ceremony', 'Excursion',
@@ -36,7 +28,7 @@ include 'includes/header.php';
 <section class="page-hero">
   <div class="container">
     <div class="page-hero__inner">
-      <div class="breadcrumb"><a href="index.php">Home</a> / Gallery</div>
+      <div class="breadcrumb"><a href=".">Home</a> / Gallery</div>
       <h1>Gallery</h1>
       <p>A look at learning and life at Shalom Academy — from agriculture practicals to ICT and student leadership.</p>
     </div>
@@ -56,7 +48,7 @@ include 'includes/header.php';
       </div>
     <?php else: ?>
       <div class="gallery-grid">
-        <?php foreach ($placeholders as $i => $caption): ?>
+        <?php foreach ($captions as $i => $caption): ?>
           <figure class="gallery-item">
             <img src="<?= e($gallery_url) ?>/<?= $i + 1 ?>.jpg" alt="<?= e($caption) ?> at Shalom Academy"
                  loading="lazy" onerror="this.style.display='none'">
@@ -64,7 +56,6 @@ include 'includes/header.php';
           </figure>
         <?php endforeach; ?>
       </div>
-      <p class="placeholder-note">Placeholder gallery — add photos to <code>assets/img/gallery/</code> and they appear here automatically.</p>
     <?php endif; ?>
   </div>
 </section>

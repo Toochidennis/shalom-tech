@@ -1,17 +1,10 @@
 <?php
 /**
- * includes/result_portal.php — shared result-check portal UI.
- *
- * Rendered by linkschool.php (Nsukka) and linkschool_obollo.php (Obollo).
- * The caller sets these before including:
+ * Shared result-check portal UI, rendered by linkschool.php (Nsukka) and
+ * linkschool_obollo.php (Obollo). The caller sets before including:
  *   $portal_campus  — e.g. 'Nsukka' or 'Obollo'
- *   $portal_action  — form action endpoint (LinkSkool). [VERIFY]
+ *   $portal_action  — form action endpoint (LinkSkool)
  *   $portal_self    — this page's own filename (for breadcrumb/active state)
- *
- * BACKEND CONTRACT [VERIFY]: the live site integrates with LinkSkool. The exact
- * form `action` URL, `method`, and field `name` attributes used by the real
- * LinkSkool result-check integration are preserved from the live site:
- * username, password, login/forgetpass, dkb and fld.
  */
 if (!defined('SCHOOL_NAME')) { require_once __DIR__ . '/../config.php'; }
 $portal_method = isset($portal_method) ? $portal_method : 'post';
@@ -21,7 +14,7 @@ $portal_school_code = isset($portal_school_code) ? $portal_school_code : 'shalom
 <section class="page-hero">
   <div class="container">
     <div class="page-hero__inner">
-      <div class="breadcrumb"><a href="index.php">Home</a> / Check Result<?= $portal_campus === 'Obollo' ? ' (Obollo)' : '' ?></div>
+      <div class="breadcrumb"><a href=".">Home</a> / Check Result<?= $portal_campus === 'Obollo' ? ' (Obollo)' : '' ?></div>
       <h1>Check Your Result<?= $portal_campus === 'Obollo' ? ' — Obollo' : '' ?></h1>
       <p>Checking your results is easy, convenient and efficient using LinkSkool. Enter your details below to continue.</p>
     </div>
@@ -51,11 +44,6 @@ $portal_school_code = isset($portal_school_code) ? $portal_school_code : 'shalom
           <h2 style="font-size:1.4rem;margin-bottom:.3rem;">Student result login</h2>
           <p style="color:var(--muted);font-size:.95rem;margin-bottom:1.3rem;">Powered by LinkSkool.</p>
 
-          <!--
-            [VERIFY] Confirm action/method/field names against the live LinkSkool
-            integration before go-live, then update $portal_action and the
-            name="" attributes below to match exactly.
-          -->
           <form action="<?= e($portal_action) ?>" method="<?= e($portal_method) ?>" id="form2" name="form2" novalidate>
             <div class="field">
               <label for="reg_username">Registration Number / Username <span class="req">*</span></label>

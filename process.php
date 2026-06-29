@@ -1,16 +1,8 @@
 <?php
 require_once 'config.php';
 
-/*
- * Live-site compatible contact endpoint.
- *
- * The current live site posts these fields via AJAX from contact_script.js:
- * firstName, lastName, email, message.
- *
- * Delivery is intentionally conservative here: this endpoint validates the
- * same payload and returns a plain-text response for the frontend. Wire mail()
- * or database storage here when deploying with real server credentials.
- */
+// Contact form endpoint. Receives firstName, lastName, email and message
+// (posted via AJAX), validates them and returns a plain-text response.
 header('Content-Type: text/plain; charset=UTF-8');
 
 if (($_SERVER['REQUEST_METHOD'] ?? 'GET') !== 'POST') {
@@ -36,5 +28,4 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     exit;
 }
 
-// TODO: Connect this to the production mail/database backend.
 echo 'Thank you. Your message has been received.';

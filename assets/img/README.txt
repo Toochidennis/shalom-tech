@@ -1,9 +1,7 @@
 Image assets for Shalom Academy Nsukka
 ======================================
 
-The site references the following images. They are OPTIONAL placeholders —
-every <img> has an onerror/empty fallback, so missing files will not break the
-layout. Drop real photos in with these names to populate the design:
+Recommended images and sizes:
 
 Homepage / shared
   hero.jpg            Hero image (campus / students)        ~1200x1000
@@ -14,11 +12,11 @@ Homepage / shared
 News page
   news-1.jpg .. news-6.jpg   News card images                16:9
 
-Gallery page (DYNAMIC — recommended)
+Gallery page
   gallery/            Put any number of .jpg/.png/.webp files in
-                      assets/img/gallery/ and they appear on gallery.php
-                      automatically. The filename (dashes/underscores
-                      replaced by spaces) becomes the caption.
-                      e.g.  agriculture-practicals.jpg -> "Agriculture Practicals"
+                      assets/img/gallery/ and they appear on the gallery page.
+                      The filename (dashes/underscores become spaces) is used
+                      as the caption, e.g. agriculture-practicals.jpg ->
+                      "Agriculture Practicals".
 
-Tip: keep images optimised (use .webp where possible) for fast mobile loading.
+Keep images optimised (use .webp where possible) for fast mobile loading.

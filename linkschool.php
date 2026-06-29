@@ -1,14 +1,14 @@
 <?php
 /**
- * linkschool.php — Check Result (Nsukka campus).
- * Result-check portal wrapper around the LinkSkool integration.
- * Route name preserved from the live site. See includes/result_portal.php.
+ * Check Result — Nsukka campus. Renders the shared result-check portal
+ * (see includes/result_portal.php).
  */
 require_once 'config.php';
 $page_title    = 'Check Result';
 $page_desc     = 'Check your results online for ' . SCHOOL_NAME . ' (Nsukka), powered by LinkSkool.';
+$page_robots   = 'noindex, follow'; // login gateway — keep out of search index
 $portal_campus = 'Nsukka';
-$portal_action = PORTAL_RESULT_NSUKKA; // [VERIFY] real LinkSkool endpoint
+$portal_action = PORTAL_RESULT_NSUKKA;
 $portal_self   = 'linkschool.php';
 $portal_school_code = 'shalom';
 

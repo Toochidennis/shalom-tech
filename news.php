@@ -1,13 +1,7 @@
 <?php
 require_once 'config.php';
 
-/*
- * News — placeholder content.
- *
- * [VERIFY] If news is meant to be managed dynamically (DB, CMS, or a posts
- * folder), replace the $news array below with that source. The markup is
- * structured so swapping the data source requires no CSS/layout changes.
- */
+// Each item: [date (Y-m-d), title, summary, image filename in assets/img/]
 $news = [
     ['2026-06-10', 'New Session Resumption & Orientation', 'Welcome back! Find key resumption dates and orientation details for new and returning students as the academic session begins. We look forward to another year of diligent learning.', 'news-1.jpg'],
     ['2026-05-22', 'Inter-House Sports Highlights', 'Our students displayed remarkable diligence and team spirit across this year\'s inter-house athletics. Congratulations to all participating houses for a memorable event.', 'news-2.jpg'],
@@ -26,7 +20,7 @@ include 'includes/header.php';
 <section class="page-hero">
   <div class="container">
     <div class="page-hero__inner">
-      <div class="breadcrumb"><a href="index.php">Home</a> / News</div>
+      <div class="breadcrumb"><a href=".">Home</a> / News</div>
       <h1>News &amp; Events</h1>
       <p>Stay up to date with the latest announcements, events and stories from Shalom Academy.</p>
     </div>
@@ -50,7 +44,6 @@ include 'includes/header.php';
           </article>
         <?php endforeach; ?>
       </div>
-      <p class="placeholder-note">Placeholder news items — replace the <code>$news</code> array in <code>news.php</code> with your real source (DB/CMS/folder).</p>
     <?php else: ?>
       <p class="lead text-center">No news posts yet. Please check back soon.</p>
     <?php endif; ?>

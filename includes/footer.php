@@ -31,20 +31,20 @@ if (!defined('SCHOOL_NAME')) { require_once __DIR__ . '/../config.php'; }
         <div>
           <h4>Explore</h4>
           <ul class="footer-links">
-            <li><a href="index.php">Home</a></li>
-            <li><a href="about.php">About Us</a></li>
-            <li><a href="admission.php">Admission</a></li>
-            <li><a href="gallery.php">Gallery</a></li>
-            <li><a href="news.php">News</a></li>
-            <li><a href="contact.php">Contact Us</a></li>
+            <li><a href="<?= e(url('index.php')) ?>">Home</a></li>
+            <li><a href="<?= e(url('about.php')) ?>">About Us</a></li>
+            <li><a href="<?= e(url('admission.php')) ?>">Admission</a></li>
+            <li><a href="<?= e(url('gallery.php')) ?>">Gallery</a></li>
+            <li><a href="<?= e(url('news.php')) ?>">News</a></li>
+            <li><a href="<?= e(url('contact.php')) ?>">Contact Us</a></li>
           </ul>
         </div>
 
         <div>
           <h4>Portals</h4>
           <ul class="footer-links">
-            <li><a href="linkschool.php">Check Result</a></li>
-            <li><a href="staff_login.php">Staff Login</a></li>
+            <li><a href="<?= e(url('linkschool.php')) ?>">Check Result</a></li>
+            <li><a href="<?= e(url('staff_login.php')) ?>">Staff Login</a></li>
             <li><a href="<?= e(LINK_LINKSCHOOL) ?>" target="_blank" rel="noopener">LinkSkool</a></li>
             <li><a href="<?= e(LINK_SSTAC) ?>" target="_blank" rel="noopener">Shalom Science &amp; Tech</a></li>
             <li><a href="<?= e(LINK_UNN) ?>" target="_blank" rel="noopener">University of Nigeria</a></li>

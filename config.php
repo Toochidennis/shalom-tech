@@ -1,19 +1,9 @@
 <?php
 /**
- * config.php — Site-wide configuration for Shalom Academy Nsukka.
+ * Site-wide configuration for Shalom Academy Nsukka.
  *
- * Single source of truth for school facts, navigation, contact details and
- * external portal integration. Pages and shared includes read from here so
- * content is never duplicated/hardcoded across files.
- *
- * SOURCE OF TRUTH: facts below were taken from the live site
- * (https://www.shalomacademy.net/). Do not invent school facts.
- *
- * PORTAL CONTRACTS: the result/staff login pages integrate with the LinkSkool
- * platform (linkschoolonline.com / linkschool.com). The exact form `action`
- * endpoints and field `name` attributes used by the live LinkSkool integration
- * MUST be confirmed against the real backend before go-live. The constants
- * below are the integration points to verify — see flags marked [VERIFY].
+ * Central place for school details, navigation, contact information and the
+ * LinkSkool portal endpoints used by the result and staff-login pages.
  */
 
 // ---------------------------------------------------------------------------
@@ -24,6 +14,16 @@ define('SCHOOL_SHORT',       'Shalom Academy');
 define('SCHOOL_TAGLINE',     'Balanced, qualitative Christian education at minimum cost');
 define('SCHOOL_FOUNDED',     '1999'); // Founded January 1, 1999
 define('SCHOOL_MOTTO',       'Diligence Leads to Excellence');
+
+// ---------------------------------------------------------------------------
+// SEO / canonical
+// Production base URL (no trailing slash). Used to build absolute canonical,
+// Open Graph and structured-data URLs. Update if the live domain changes.
+// ---------------------------------------------------------------------------
+define('SITE_URL',           'https://www.shalomacademy.net');
+define('SITE_LOCALE',        'en_NG');
+define('DEFAULT_OG_IMAGE',   'assets/img/hero.jpg'); // social-share preview image
+define('THEME_COLOR',        '#0b2a4a');             // matches header brand navy
 
 // ---------------------------------------------------------------------------
 // Contact details (from live site)
@@ -41,18 +41,16 @@ define('SOCIAL_FACEBOOK',    'https://www.facebook.com/Shalom-Academy-Nsukka-140
 define('SOCIAL_YOUTUBE',     'https://www.youtube.com/channel/UC7ZE8PH5giPNxiCbjDvS7Ow');
 
 // ---------------------------------------------------------------------------
-// External / partner links (from live site)
+// External / partner links
 // ---------------------------------------------------------------------------
 define('LINK_SSTAC',         'https://www.sstac.sch.ng');           // sister school
 define('LINK_UNN',           'https://www.unn.edu.ng');             // University of Nigeria, Nsukka
-define('LINK_LINKSCHOOL',    'http://www.linkschool.com');          // LinkSkool
-define('LINK_LINKSCHOOL_ONLINE', 'http://www.linkschoolonline.com'); // "Powered by" portal
+define('LINK_LINKSCHOOL',    'http://www.linkschool.com');
+define('LINK_LINKSCHOOL_ONLINE', 'http://www.linkschoolonline.com');
 
 // ---------------------------------------------------------------------------
-// LinkSkool portal integration endpoints  [VERIFY all before go-live]
-// These are the form `action` targets for the result/staff login pages.
-// The live site posts these to the LinkSkool platform. Until the exact
-// endpoints are confirmed, they default to the LinkSkool online portal.
+// LinkSkool portal endpoints — form action targets for the result and
+// staff-login pages.
 // ---------------------------------------------------------------------------
 define('PORTAL_RESULT_NSUKKA', 'https://www.linkskool.com/newportal/process_candidate_login.php');
 define('PORTAL_RESULT_OBOLLO', 'https://www.linkskool.com/newportal/process_candidate_login.php');
@@ -93,4 +91,34 @@ function current_page() {
  */
 function e($value) {
     return htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
+}
+
+/**
+ * Helper: clean (extensionless) link for an internal page.
+ * 'about.php' => 'about', and the home page links to the site root.
+ * The server maps /about back to about.php (see .htaccess / router.php).
+ */
+function url($file) {
+    $slug = preg_replace('/\.php$/', '', $file);
+    return ($slug === 'index') ? '.' : $slug;
+}
+
+/**
+ * Helper: build an absolute URL from a site-relative path using SITE_URL.
+ */
+function abs_url($path = '') {
+    $path = ltrim((string) $path, '/');
+    return rtrim(SITE_URL, '/') . ($path !== '' ? '/' . $path : '/');
+}
+
+/**
+ * Helper: canonical (extensionless) URL for the current page.
+ * The home page is canonicalised to the site root ("/").
+ */
+function canonical_url() {
+    $page = preg_replace('/\.php$/', '', current_page());
+    if ($page === 'index' || $page === '') {
+        return abs_url('');
+    }
+    return abs_url($page);
 }

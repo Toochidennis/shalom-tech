@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+Disallow: /staff_login
+Disallow: /linkschool
+Disallow: /linkschool_obollo
+Disallow: /process.php
+
+Sitemap: https://www.shalomacademy.net/sitemap.xml

@@ -1,0 +1,18 @@
+{
+  "name": "Shalom Academy Nsukka",
+  "short_name": "Shalom Academy",
+  "description": "Balanced, qualitative Christian education at minimum cost — Nsukka, Enugu State.",
+  "start_url": "/index.php",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0b2a4a",
+  "icons": [
+    {
+      "src": "assets/img/school-logo.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

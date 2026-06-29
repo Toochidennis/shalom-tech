@@ -4,11 +4,6 @@ $page_title = '';
 $page_desc  = SCHOOL_NAME . ' — ' . SCHOOL_TAGLINE . '. A Christian school in Nsukka, Enugu State, since ' . SCHOOL_FOUNDED . '.';
 include 'includes/header.php';
 
-/*
- * NOTE: Gallery/news previews below use placeholder items. If/when these are
- * loaded dynamically from PHP/DB/folders, replace the static arrays with the
- * dynamic source — do not leave hardcoded data in production.
- */
 $home_gallery = [
     ['Students in class', 'academics'],
     ['ICT learning', 'ict'],
@@ -34,9 +29,9 @@ $home_news = [
         <h1>Welcome to Shalom Academy Nsukka</h1>
         <p class="hero__lead">A premium Nigerian private school committed to academic excellence, moral integrity and raising leaders for a better tomorrow.</p>
         <div class="hero__cta">
-          <a class="btn btn--gold btn--lg" href="admission.php">Apply for Admission</a>
-          <a class="btn btn--light btn--lg" href="linkschool.php">Check Result</a>
-          <a class="btn btn--ghost-light btn--lg" href="contact.php">Contact School</a>
+          <a class="btn btn--gold btn--lg" href="admission">Apply for Admission</a>
+          <a class="btn btn--light btn--lg" href="linkschool">Check Result</a>
+          <a class="btn btn--ghost-light btn--lg" href="contact">Contact School</a>
         </div>
       </div>
     </div>
@@ -61,7 +56,7 @@ $home_news = [
           <span>Christ-Centered Values</span>
           <span>Discipline, Respect &amp; Excellence</span>
         </div>
-        <a class="btn btn--primary mt-3" href="about.php">Learn more about us</a>
+        <a class="btn btn--primary mt-3" href="about">Learn more about us</a>
       </div>
     </div>
   </div>
@@ -109,7 +104,7 @@ $home_news = [
       <p>Essential school services are available through secure quick links.</p>
     </div>
     <div class="grid grid-3">
-      <a class="portal-card" href="admission.php">
+      <a class="portal-card" href="admission">
         <span class="portal-card__icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" focusable="false">
             <path d="M12 3 3 7.5l9 4.5 9-4.5L12 3Z"></path>
@@ -122,7 +117,7 @@ $home_news = [
         <p>Begin your application and learn about entry requirements.</p>
         <span class="go">Apply now</span>
       </a>
-      <a class="portal-card" href="linkschool.php">
+      <a class="portal-card" href="linkschool">
         <span class="portal-card__icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" focusable="false">
             <path d="M6 3.5h9l3 3V20a.5.5 0 0 1-.5.5h-11A.5.5 0 0 1 6 20V4a.5.5 0 0 1 .5-.5Z"></path>
@@ -135,7 +130,7 @@ $home_news = [
         <p>View student results online for the Nsukka campus.</p>
         <span class="go">Open portal →</span>
       </a>
-      <a class="portal-card" href="staff_login.php">
+      <a class="portal-card" href="staff_login">
         <span class="portal-card__icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" focusable="false">
             <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"></path>
@@ -167,7 +162,7 @@ $home_news = [
           <span class="news-card__date"><?= e(date('M j, Y', strtotime($home_news[0][0]))) ?></span>
           <h3><?= e($home_news[0][1]) ?></h3>
           <p><?= e($home_news[0][2]) ?></p>
-          <a href="news.php">Read latest update →</a>
+          <a href="news">Read latest update →</a>
         </div>
       </article>
       <div class="gallery-strip">
@@ -180,8 +175,8 @@ $home_news = [
       </div>
     </div>
     <div class="text-center mt-3">
-      <a class="btn btn--ghost" href="news.php">See all news</a>
-      <a class="btn btn--primary" href="gallery.php">View gallery</a>
+      <a class="btn btn--ghost" href="news">See all news</a>
+      <a class="btn btn--primary" href="gallery">View gallery</a>
     </div>
   </div>
 </section>
@@ -208,10 +203,9 @@ $home_news = [
             <div><div class="k">Email</div><div class="v"><a href="mailto:<?= e(SCHOOL_EMAIL) ?>"><?= e(SCHOOL_EMAIL) ?></a></div></div>
           </li>
         </ul>
-        <a class="btn btn--primary mt-3" href="contact.php">Contact us</a>
+        <a class="btn btn--primary mt-3" href="contact">Contact us</a>
       </div>
       <div class="map-embed">
-        <!-- General Nsukka map; replace q= with the exact campus coordinates/address if desired -->
         <iframe title="Map showing Nsukka, Enugu State"
           src="https://www.google.com/maps?q=Nsukka%2C+Enugu+State%2C+Nigeria&output=embed"
           loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -227,8 +221,8 @@ $home_news = [
       <h2>Ready to join the Shalom family?</h2>
       <p>Give your child a balanced, qualitative Christian education. Admissions are open for the new session.</p>
       <div class="hero__cta">
-        <a class="btn btn--gold btn--lg" href="admission.php">Apply for Admission</a>
-        <a class="btn btn--ghost-light btn--lg" href="contact.php">Talk to us</a>
+        <a class="btn btn--gold btn--lg" href="admission">Apply for Admission</a>
+        <a class="btn btn--ghost-light btn--lg" href="contact">Talk to us</a>
       </div>
     </div>
   </div>

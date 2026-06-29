@@ -1,24 +1,17 @@
 <?php
-/**
- * staff_login.php — Staff Login (LinkSkool-backed).
- * Route name preserved from the live site.
- *
- * BACKEND CONTRACT [VERIFY]: integrates with LinkSkool. Confirm the exact form
- * `action`, `method`, and field `name` attributes against the real LinkSkool
- * staff-login integration before go-live. Visible fields on the live site are:
- * Username and Password.
- */
+// Staff login — submits to the LinkSkool staff portal.
 require_once 'config.php';
 $page_title = 'Staff Login';
 $page_desc  = 'Restricted staff portal for ' . SCHOOL_NAME . ', powered by LinkSkool.';
-$staff_action = PORTAL_STAFF_LOGIN; // [VERIFY] real LinkSkool staff endpoint
+$page_robots = 'noindex, follow';
+$staff_action = PORTAL_STAFF_LOGIN;
 include 'includes/header.php';
 ?>
 
 <section class="page-hero">
   <div class="container">
     <div class="page-hero__inner">
-      <div class="breadcrumb"><a href="index.php">Home</a> / Staff Login</div>
+      <div class="breadcrumb"><a href=".">Home</a> / Staff Login</div>
       <h1>Staff Login</h1>
       <p>This section is strictly restricted to members of staff of <?= e(SCHOOL_NAME) ?>.</p>
     </div>
@@ -48,11 +41,6 @@ include 'includes/header.php';
           <h2 style="font-size:1.4rem;margin-bottom:.3rem;">Sign in</h2>
           <p style="color:var(--muted);font-size:.95rem;margin-bottom:1.3rem;">Powered by LinkSkool.</p>
 
-          <!--
-            [VERIFY] Confirm action/method/field names against the live LinkSkool
-            staff integration before go-live, then update $staff_action and the
-            name="" attributes to match exactly.
-          -->
           <form action="<?= e($staff_action) ?>" method="post" id="form2" name="form2" novalidate>
             <div class="field">
               <label for="username">Username <span class="req">*</span></label>

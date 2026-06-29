@@ -8,7 +8,7 @@ include 'includes/header.php';
 <section class="page-hero">
   <div class="container">
     <div class="page-hero__inner">
-      <div class="breadcrumb"><a href="index.php">Home</a> / Contact Us</div>
+      <div class="breadcrumb"><a href=".">Home</a> / Contact Us</div>
       <h1>Contact Us</h1>
       <p>We'd love to hear from you. Reach out with any questions about admissions, results or visiting our campus.</p>
     </div>
